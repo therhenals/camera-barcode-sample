@@ -24,3 +24,26 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// .camera_preview_content {
+//   --background: transparent;
+
+//   ion-content {
+//     --background: transparent !important;
+//   }
+// }
+
+// .camera_preview_content_modal {
+//   ion-content {
+//     --background: transparent !important;
+//   }
+// }
+
+body.scanner-active {
+  --background: transparent;
+  --ion-background-color: transparent;
+}
+
+.hide {
+  display: none;
+}

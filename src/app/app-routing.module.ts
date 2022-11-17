@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'scanner',
+    loadChildren: () => import('./scanner/scanner.module').then( m => m.ScannerPageModule)
+  },
+  {
+    path: 'other',
+    loadChildren: () => import('./other/other.module').then( m => m.OtherPageModule)
+  },
 ];
 
 @NgModule({
