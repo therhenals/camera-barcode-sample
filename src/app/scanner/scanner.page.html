@@ -3,8 +3,16 @@
     <p color="light">
       Acerca la camara al codigo de barras en la parte superior de la SIM
     </p>
-    <div class="space">
-    </div>
+    <div class="space"></div>
     <ion-button fill="clear" (click)="captura()"> capturar </ion-button>
   </div>
+
+  <image-cropper
+    [imageBase64]="image"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="16 / 9"
+    [imageQuality]="100"
+    format="jpeg"
+    (imageCropped)="imageCropped($event)"
+  ></image-cropper>
 </ion-content>

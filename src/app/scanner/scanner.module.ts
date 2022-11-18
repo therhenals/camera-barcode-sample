@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ScannerPageRoutingModule } from './scanner-routing.module';
 
 import { ScannerPage } from './scanner.page';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ScannerPageRoutingModule
+    ScannerPageRoutingModule,
+    ImageCropperModule
   ],
   declarations: [ScannerPage]
 })

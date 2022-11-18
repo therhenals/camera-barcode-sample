@@ -7,6 +7,7 @@ import {
 } from '@capacitor-community/camera-preview';
 
 import { ModalController } from '@ionic/angular';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-scanner',
@@ -14,6 +15,7 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./scanner.page.scss'],
 })
 export class ScannerPage implements OnInit {
+  image: any;
   constructor(private modalController: ModalController) {}
 
   // async ngOnDestroy() {
@@ -74,13 +76,18 @@ export class ScannerPage implements OnInit {
       const { value } = await CameraPreview.capture(
         cameraPreviewPictureOptions
       );
-      console.log(value);
 
       if (value) {
-        this.close();
+        this.image = 'data:image/jpg;base64,'+ value;
+        // this.close();
       }
     } catch (error) {
       console.log(error);
     }
+  }
+
+  imageCropped(event: ImageCroppedEvent) {
+    console.log('Crop', event.base64);
+    this.close();
   }
 }
